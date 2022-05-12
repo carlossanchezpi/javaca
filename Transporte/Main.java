@@ -1,51 +1,32 @@
-enum Transporte{
-  AVION(900,10), TREN(200,14), COCHE(120,12), BICICLETA(20,0);
-  private float kilometros;
-  private float precio;
-  Transporte(float kilometros, float precio){
-    this.kilometros=kilometros;
-    this.precio=precio;
-  }
-  public float getKilometros(){
-    return this.kilometros;
-  }
-  public void setKilometros(float kilometros){
-    this.kilometros = kilometros;
-  }
-  public float getPrecio(){
-    return this.precio;
-  }
-  public void setPrecio(float precio){
-    this.precio = precio;
-  }
-}
 public class Main{
   public static void main(String[] args) {
-
-    int sitio1 = 2500;
-    int sitio2= 125;
+    Transporte trAvion = Transporte.AVION;
+    Transporte trTren = Transporte.TREN;
+    Transporte trCoche = Transporte.COCHE;
+    Transporte trBicicleta = Transporte.BICICLETA;
+    double sitio1 = 2500;
+    double sitio2= 125;
 
     System.out.println("####################-----------SITIO1---------###################");
-
-    System.out.println("Un avión tarda " + (sitio1/Transporte.AVION.getKilometros()+1)  + " horas en hacer " + sitio1 + "km." +
-    " y cuesta: " + sitio1/100 * Transporte.AVION.getPrecio() + " euros.");
-    System.out.println("Un tren tarda " + sitio1/Transporte.TREN.getKilometros() + " horas en hacer " + sitio1 + "km." +
-    " y cuesta: " + sitio1/100 * Transporte.TREN.getPrecio() + " euros.");
-    System.out.println("Un coche tarda " + sitio1/Transporte.COCHE.getKilometros() + " horas en hacer " + sitio1 + "km" +
-    " y cuesta: " + sitio1/100 * Transporte.COCHE.getPrecio() + " euros.");
-    System.out.println("Una bicicleta tarda " + sitio1/Transporte.BICICLETA.getKilometros() + " horas en hacer " + sitio1 + "km." +
-    " y cuesta: " + sitio1/100 * Transporte.BICICLETA.getPrecio() + " euros.");
+    System.out.println("Un avión tarda " + trAvion.tiempo(sitio1) + " horas en hacer " + sitio1 + "km." +
+    " y cuesta: " + trAvion.precioTotal(sitio1) + " euros.");
+    System.out.println("Un tren tarda " + trTren.tiempo(sitio1) + " horas en hacer " + sitio1 + "km." +
+    " y cuesta: " + trTren.precioTotal(sitio1) + " euros.");
+    System.out.println("Un coche tarda " + trCoche.tiempo(sitio1) + " horas en hacer " + sitio1 + "km" +
+    " y cuesta: " + trCoche.precioTotal(sitio1) + " euros.");
+    System.out.println("Una bicicleta tarda " + trBicicleta.tiempo(sitio1) + " horas en hacer " + sitio1 + "km." +
+    " y cuesta: " + trBicicleta.precioTotal(sitio1) + " euros.");
 
     System.out.println("####################-----------SITIO2---------###################");
 
-    System.out.println("Un avión tarda " + (sitio2/Transporte.AVION.getKilometros()+1) + " horas en hacer " + sitio2 + "km." +
-    " y cuesta: " + sitio2/100 * Transporte.AVION.getPrecio() + " euros.");
-    System.out.println("Un tren tarda " + sitio2/Transporte.TREN.getKilometros() + " horas en hacer " + sitio2 + "km." +
-    " y cuesta: " + sitio2/100 * Transporte.TREN.getPrecio() + " euros.");
-    System.out.println("Un coche tarda " + sitio2/Transporte.COCHE.getKilometros() + " horas en hacer " + sitio2 + "km." +
-    " y cuesta: " + sitio2/100 * Transporte.COCHE.getPrecio() + " euros.");
-    System.out.println("Una bicicleta tarda " + sitio2/Transporte.BICICLETA.getKilometros() + " horas en hacer " + sitio2 + "km." +
-    " y cuesta: " + sitio2/100 * Transporte.BICICLETA.getPrecio() + " euros.");
+    System.out.println("Un avión tarda " + trAvion.tiempo(sitio2) + " horas en hacer " + sitio2 + "km." +
+    " y cuesta: " + trAvion.precioTotal(sitio2) + " euros.");
+    System.out.println("Un tren tarda " + trTren.tiempo(sitio2) + " horas en hacer " + sitio2 + "km." +
+    " y cuesta: " + trTren.precioTotal(sitio2) + " euros.");
+    System.out.println("Un coche tarda " + trCoche.tiempo(sitio2) + " horas en hacer " + sitio2 + "km" +
+    " y cuesta: " + trCoche.precioTotal(sitio2) + " euros.");
+    System.out.println("Una bicicleta tarda " + trBicicleta.tiempo(sitio2) + " horas en hacer " + sitio2 + "km." +
+    " y cuesta: " + trBicicleta.precioTotal(sitio2) + " euros.");
 
 
   }
